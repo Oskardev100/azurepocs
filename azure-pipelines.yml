@@ -1,3 +1,10 @@
+steps:
 - task: Npm@1
+  displayName: 'npm install'
   inputs:
-    command: 'install'
+    verbose: false
+- task: ArchiveFiles@2
+  displayName: 'Archive files'
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+    includeRootFolder: false
