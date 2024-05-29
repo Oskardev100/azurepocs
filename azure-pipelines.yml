@@ -12,10 +12,10 @@ variables:
   azureSubscription: '9f4297f1-445f-4000-a8c2-6dda78cf6c7a'
 
   # Function app name
-  functionAppName: ''
+  functionAppName: 'SampleHttpTrigger01'
 
   # Environment name
-  environmentName: ''
+  environmentName: 'dev'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
