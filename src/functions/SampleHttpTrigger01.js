@@ -48,6 +48,7 @@ async function GetKeyVaultValues(secretName){
             console.log(error);
             
         }
+        return secret;
         
         
     } catch (error) {
