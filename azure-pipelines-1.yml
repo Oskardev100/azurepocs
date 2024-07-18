@@ -22,8 +22,8 @@ steps:
   #parallel: none
 
 # Compile the project
-- script: |
-    npm run build
-  displayName: 'Compile the project'
+#- script: |
+#    npm run build
+#  displayName: 'Compile the project'
   # Enforce sequential execution
   #parallel: none
