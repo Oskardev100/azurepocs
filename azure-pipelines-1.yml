@@ -1,11 +1,29 @@
 trigger:
 - main
 
+pool:
+  vmImage: 'ubuntu-latest'
 
-jobs:
-- job: MyJob
-  strategy:
-    parallel: 0
-  steps:
-  - script: echo "Hello, world!"
-    displayName: 'Run a script'
+steps:
+# Use Node.js 14.x
+- task: UseNode@1
+  inputs:
+    versionSpec: '14.x'
+    checkLatest: true
+  displayName: 'Use Node.js 14.x'
+  # Enforce sequential execution
+  #parallel: 0
+
+# Install dependencies
+- script: |
+    npm install
+  displayName: 'Install dependencies'
+  # Enforce sequential execution
+  #parallel: 0
+
+# Compile the project
+- script: |
+    npm run build
+  displayName: 'Compile the project'
+  # Enforce sequential execution
+  #parallel: 0
