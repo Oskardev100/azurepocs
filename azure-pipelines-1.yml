@@ -9,6 +9,7 @@ steps:
   inputs:
     versionSpec: '14.x'
     checkLatest: true
+  displayName: 'Use Node.js 14.x'
 
 - script: |
     npm install
@@ -27,4 +28,9 @@ steps:
     replaceExistingArchive: true
   displayName: 'Archive build artifacts'
 
-
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+  displayName: 'Publish build artifacts'
