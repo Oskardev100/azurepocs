@@ -7,7 +7,7 @@ pool:
 steps:
 - task: UseNode@1
   inputs:
-    versionSpec: '18.x'
+    versionSpec: '14.x'
     checkLatest: true
 
 - script: |
@@ -27,9 +27,4 @@ steps:
     replaceExistingArchive: true
   displayName: 'Archive build artifacts'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
-  displayName: 'Publish build artifacts'
+
