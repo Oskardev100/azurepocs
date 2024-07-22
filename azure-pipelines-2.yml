@@ -13,11 +13,14 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+    versionSpec: '18.x'
+  displayName: 'Use Node.js 18.x'
 
 - script: echo 'hello world'
   displayName: 'hello world'
 
 - script: npm install
-  displayName: 'installing stuff'
+  displayName: 'Install dependencies'
+
+- script: npm run build
+  displayName: 'Compile the project'
