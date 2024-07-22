@@ -22,5 +22,5 @@ steps:
 - script: npm install
   displayName: 'Install dependencies'
 
-- script: npm run build
+- script: func run
   displayName: 'Compile the project'
